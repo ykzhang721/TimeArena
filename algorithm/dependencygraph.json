@@ -1,0 +1,826 @@
+{
+    "cooking1": [
+        {
+            "wash dish": 3,
+            "pick rice": 2,
+            "pick beef": 2,
+            "cook rice in pot*": 4,
+            "add rice to dish": 2,
+            "chop beef": 3,
+            "fry beef in fryer*": 5,
+            "add beef to dish": 2
+        },
+        {
+            "cook rice in pot*": [
+                "pick rice"
+            ],
+            "add rice to dish": [
+                "cook rice in pot*",
+                "wash dish"
+            ],
+            "chop beef": [
+                "pick beef"
+            ],
+            "fry beef in fryer*": [
+                "chop beef"
+            ],
+            "add beef to dish": [
+                "fry beef in fryer*",
+                "wash dish"
+            ]
+        }
+    ],
+    "cooking2": [
+        {
+            "wash dish": 3,
+            "pick noodle": 1,
+            "cook noodle in pot*": 5,
+            "add noodle to dish": 2,
+            "pick mushroom": 2,
+            "chop mushroom": 3,
+            "fry mushroom in fryer*": 2,
+            "add mushroom to dish": 2,
+            "pick shrimp": 1,
+            "chop shrimp": 2,
+            "fry shrimp in fryer*": 4,
+            "add shrimp to dish": 2
+        },
+        {
+            "cook noodle in pot*": [
+                "pick noodle"
+            ],
+            "add noodle to dish": [
+                "cook noodle in pot*",
+                "wash dish"
+            ],
+            "chop mushroom": [
+                "pick mushroom"
+            ],
+            "fry mushroom in fryer*": [
+                "chop mushroom"
+            ],
+            "add mushroom to dish": [
+                "fry mushroom in fryer*",
+                "wash dish"
+            ],
+            "chop shrimp": [
+                "pick shrimp"
+            ],
+            "fry shrimp in fryer*": [
+                "chop shrimp"
+            ],
+            "add shrimp to dish": [
+                "fry shrimp in fryer*",
+                "wash dish"
+            ]
+        }
+    ],
+    "cooking3": [
+        {
+            "pick noodle": 1,
+            "cook noodle in pot*": 5,
+            "add noodle to dish": 3,
+            "pick tomato": 2,
+            "chop tomato": 3,
+            "fry tomato in fryer*": 2,
+            "add tomato to dish": 3,
+            "wash dish": 2
+        },
+        {
+            "cook noodle in pot*": [
+                "pick noodle"
+            ],
+            "add noodle to dish": [
+                "cook noodle in pot*",
+                "wash dish"
+            ],
+            "chop tomato": [
+                "pick tomato"
+            ],
+            "fry tomato in fryer*": [
+                "chop tomato"
+            ],
+            "add tomato to dish": [
+                "fry tomato in fryer*",
+                "wash dish"
+            ]
+        }
+    ],
+    "cooking4": [
+        {
+            "wash dish": 1,
+            "pick dough": 1,
+            "chop dough": 3,
+            "add dough to dish": 2,
+            "pick cheese": 2,
+            "chop cheese": 1,
+            "add cheese to dish": 4,
+            "pick tomato": 3,
+            "chop tomato": 2,
+            "add tomato to dish": 1,
+            "bake dish in oven*": 10
+        },
+        {
+            "chop dough": [
+                "pick dough"
+            ],
+            "add dough to dish": [
+                "chop dough",
+                "wash dish"
+            ],
+            "chop cheese": [
+                "pick cheese"
+            ],
+            "add cheese to dish": [
+                "chop cheese",
+                "wash dish"
+            ],
+            "chop tomato": [
+                "pick tomato"
+            ],
+            "add tomato to dish": [
+                "chop tomato",
+                "wash dish"
+            ],
+            "bake dish in oven*": [
+                "add dough to dish",
+                "add cheese to dish",
+                "add tomato to dish"
+            ]
+        }
+    ],
+    "cooking5": [
+        {
+            "pick chicken": 1,
+            "chop chicken": 5,
+            "fry chicken in fryer*": 5,
+            "add chicken to dish": 3,
+            "pick potato": 1,
+            "chop potato": 3,
+            "fry potato in fryer*": 6,
+            "add potato to dish": 3,
+            "wash dish": 1
+        },
+        {
+            "chop chicken": [
+                "pick chicken"
+            ],
+            "fry chicken in fryer*": [
+                "chop chicken"
+            ],
+            "add chicken to dish": [
+                "fry chicken in fryer*",
+                "wash dish"
+            ],
+            "chop potato": [
+                "pick potato"
+            ],
+            "fry potato in fryer*": [
+                "chop potato"
+            ],
+            "add potato to dish": [
+                "fry potato in fryer*",
+                "wash dish"
+            ]
+        }
+    ],
+    "cooking6": [
+        {
+            "pick dough": 1,
+            "chop dough": 2,
+            "add dough to dish": 2,
+            "pick cheese": 2,
+            "chop cheese": 1,
+            "add cheese to dish": 1,
+            "pick tomato": 1,
+            "chop tomato": 2,
+            "add tomato to dish": 1,
+            "pick beef": 1,
+            "chop beef": 2,
+            "fry beef in fryer*": 6,
+            "add beef to dish": 2,
+            "wash dish": 2,
+            "bake dish in oven*": 5
+        },
+        {
+            "chop dough": [
+                "pick dough"
+            ],
+            "add dough to dish": [
+                "chop dough",
+                "wash dish"
+            ],
+            "chop cheese": [
+                "pick cheese"
+            ],
+            "add cheese to dish": [
+                "chop cheese",
+                "wash dish"
+            ],
+            "chop tomato": [
+                "pick tomato"
+            ],
+            "add tomato to dish": [
+                "chop tomato",
+                "wash dish"
+            ],
+            "chop beef": [
+                "pick beef"
+            ],
+            "fry beef in fryer*": [
+                "chop beef"
+            ],
+            "add beef to dish": [
+                "fry beef in fryer*",
+                "wash dish"
+            ],
+            "bake dish in oven*": [
+                "add dough to dish",
+                "add cheese to dish",
+                "add tomato to dish",
+                "add beef to dish"
+            ]
+        }
+    ],
+    "cooking7": [
+        {
+            "pick rice": 1,
+            "cook rice in pot*": 5,
+            "fry rice in fryer*": 7,
+            "add rice to dish": 1,
+            "pick chicken": 1,
+            "chop chicken": 3,
+            "fry chicken in fryer*": 4,
+            "add chicken to dish": 3,
+            "wash dish": 3
+        },
+        {
+            "cook rice in pot*": [
+                "pick rice"
+            ],
+            "fry rice in fryer*": [
+                "cook rice in pot*"
+            ],
+            "add rice to dish": [
+                "fry rice in fryer*",
+                "wash dish"
+            ],
+            "chop chicken": [
+                "pick chicken"
+            ],
+            "fry chicken in fryer*": [
+                "chop chicken"
+            ],
+            "add chicken to dish": [
+                "fry chicken in fryer*",
+                "wash dish"
+            ]
+        }
+    ],
+    "cooking8": [
+        {
+            "pick noodle": 1,
+            "cook noodle in pot*": 6,
+            "add noodle to dish": 2,
+            "pick beef": 1,
+            "chop beef": 3,
+            "fry beef in fryer*": 6,
+            "add beef to dish": 2,
+            "wash dish": 3
+        },
+        {
+            "cook noodle in pot*": [
+                "pick noodle"
+            ],
+            "add noodle to dish": [
+                "cook noodle in pot*",
+                "wash dish"
+            ],
+            "chop beef": [
+                "pick beef"
+            ],
+            "fry beef in fryer*": [
+                "chop beef"
+            ],
+            "add beef to dish": [
+                "fry beef in fryer*",
+                "wash dish"
+            ]
+        }
+    ],
+    "cooking9": [
+        {
+            "wash dish": 3,
+            "pick rice": 1,
+            "cook rice in pot*": 5,
+            "add rice to dish": 3,
+            "pick nori_seaweed": 2,
+            "add nori_seaweed to dish": 1,
+            "pick fish": 1,
+            "cook fish in pot*": 6,
+            "add fish to dish": 2
+        },
+        {
+            "cook rice in pot*": [
+                "pick rice"
+            ],
+            "add rice to dish": [
+                "cook rice in pot*",
+                "wash dish"
+            ],
+            "add nori_seaweed to dish": [
+                "wash dish",
+                "pick nori_seaweed"
+            ],
+            "cook fish in pot*": [
+                "pick fish"
+            ],
+            "add fish to dish": [
+                "cook fish in pot*",
+                "wash dish"
+            ]
+        }
+    ],
+    "cooking10": [
+        {
+            "pick beef": 1,
+            "chop beef": 4,
+            "cook beef in pot*": 6,
+            "add beef to dish": 2,
+            "pick tomato": 2,
+            "chop tomato": 2,
+            "fry tomato in fryer*": 5,
+            "add tomato to dish": 2,
+            "wash dish": 1
+        },
+        {
+            "chop beef": [
+                "pick beef"
+            ],
+            "cook beef in pot*": [
+                "chop beef"
+            ],
+            "add beef to dish": [
+                "cook beef in pot*",
+                "wash dish"
+            ],
+            "chop tomato": [
+                "pick tomato"
+            ],
+            "fry tomato in fryer*": [
+                "chop tomato"
+            ],
+            "add tomato to dish": [
+                "fry tomato in fryer*",
+                "wash dish"
+            ]
+        }
+    ],
+    "household1": [
+        {
+            "activate kettle*": 4,
+            "pour kettle into teapot": 2,
+            "wash teapot": 1,
+            "brew tea with teapot*": 3,
+            "wash cup": 3,
+            "pour teapot into cup": 3
+        },
+        {
+            "pour kettle into teapot": [
+                "activate kettle*",
+                "wash teapot"
+            ],
+            "brew tea with teapot*": [
+                "pour kettle into teapot"
+            ],
+            "pour teapot into cup": [
+                "brew tea with teapot*",
+                "wash cup"
+            ]
+        }
+    ],
+    "household2": [
+        {
+            "gather dishes": 3,
+            "scrape dishes into trash": 2,
+            "place dishes into dishwasher": 4,
+            "empty trash": 4,
+            "activate dishwasher*": 4
+        },
+        {
+            "scrape dishes into trash": [
+                "gather dishes"
+            ],
+            "place dishes into dishwasher": [
+                "scrape dishes into trash"
+            ],
+            "empty trash": [
+                "scrape dishes into trash"
+            ],
+            "activate dishwasher*": [
+                "place dishes into dishwasher"
+            ]
+        }
+    ],
+    "household3": [
+        {
+            "gather clothes": 2,
+            "place clothes into washing_machine": 2,
+            "activate washing_machine*": 4,
+            "add detergent to washing_machine": 2,
+            "hanging clothes": 5
+        },
+        {
+            "place clothes into washing_machine": [
+                "gather clothes"
+            ],
+            "activate washing_machine*": [
+                "place clothes into washing_machine",
+                "add detergent to washing_machine"
+            ],
+            "hanging clothes": [
+                "activate washing_machine*"
+            ]
+        }
+    ],
+    "household4": [
+        {
+            "add water to watering_can": 3,
+            "water fruit by watering_can*": 6,
+            "trim fruit_tree": 5
+        },
+        {
+            "water fruit by watering_can*": [
+                "add water to watering_can"
+            ]
+        }
+    ],
+    "household5": [
+        {
+            "add herbicide to sprinkling_can": 5,
+            "weed_with sprinkling_can*": 4,
+            "hoe land": 4,
+            "plant flower": 2
+        },
+        {
+            "weed_with sprinkling_can*": [
+                "add herbicide to sprinkling_can"
+            ],
+            "plant flower": [
+                "hoe land",
+                "weed_with sprinkling_can*"
+            ]
+        }
+    ],
+    "household6": [
+        {
+            "set_up ironing_board": 2,
+            "put suit on ironing_board": 4,
+            "heat iron*": 7,
+            "iron suit": 3,
+            "store suit": 1
+        },
+        {
+            "set_up ironing_board": [
+                "put suit on ironing_board"
+            ],
+            "iron suit": [
+                "heat iron*",
+                "put suit on ironing_board"
+            ],
+            "store suit": [
+                "iron suit"
+            ]
+        }
+    ],
+    "household7": [
+        {
+            "add water to coffee_machine": 2,
+            "add coffee_beans to coffee_machine": 3,
+            "activate coffee_machine*": 6,
+            "wash cup": 3,
+            "pour coffee_machine into cup": 3
+        },
+        {
+            "activate coffee_machine*": [
+                "add coffee_beans to coffee_machine",
+                "add water to coffee_machine"
+            ],
+            "pour coffee_machine into cup": [
+                "activate coffee_machine*",
+                "wash cup"
+            ]
+        }
+    ],
+    "household8": [
+        {
+            "activate faucet*": 5,
+            "rinse mop": 3,
+            "activate sweeper*": 4,
+            "mop floor": 3,
+            "store sweeper": 2,
+            "store mop": 2
+        },
+        {
+            "rinse mop": [
+                "activate faucet*"
+            ],
+            "mop floor": [
+                "rinse mop",
+                "activate sweeper*"
+            ],
+            "store sweeper": [
+                "activate sweeper*"
+            ],
+            "store mop": [
+                "mop floor"
+            ]
+        }
+    ],
+    "household9": [
+        {
+            "activate radio*": 7,
+            "fold quilt": 3,
+            "find newspaper": 3,
+            "read newspaper": 5
+        },
+        {
+            "read newspaper": [
+                "find newspaper"
+            ]
+        }
+    ],
+    "household10": [
+        {
+            "activate air_purifier*": 7,
+            "wash rag": 5,
+            "wipe table": 4,
+            "wipe coffee_table": 3
+        },
+        {
+            "wipe table": [
+                "wash rag"
+            ],
+            "wipe coffee_table": [
+                "wash rag"
+            ]
+        }
+    ],
+    "lab1": [
+        {
+            "wash test_tube": 4,
+            "add solution to test_tube": 4,
+            "heat test_tube*": 5
+        },
+        {
+            "add solution to test_tube": [
+                "wash test_tube"
+            ],
+            "heat test_tube*": [
+                "add solution to test_tube"
+            ]
+        }
+    ],
+    "lab2": [
+        {
+            "wash beaker": 3,
+            "find sulfuric_acid": 1,
+            "find sodium_flakes": 1,
+            "dilute sulfuric_acid": 3,
+            "cut sodium_flakes": 2,
+            "add sulfuric_acid to beaker": 2,
+            "heat sodium_flakes*": 5,
+            "add sodium_flakes to beaker": 2
+        },
+        {
+            "dilute sulfuric_acid": [
+                "find sulfuric_acid"
+            ],
+            "cut sodium_flakes": [
+                "find sodium_flakes"
+            ],
+            "add sulfuric_acid to beaker": [
+                "dilute sulfuric_acid",
+                "wash beaker"
+            ],
+            "heat sodium_flakes*": [
+                "cut sodium_flakes"
+            ],
+            "add sodium_flakes to beaker": [
+                "heat sodium_flakes*",
+                "wash beaker"
+            ]
+        }
+    ],
+    "lab3": [
+        {
+            "pick magnetic_stirrer": 4,
+            "pick ferrous_sulfate": 2,
+            "wash beaker": 1,
+            "dissolve ferrous_sulfate in beaker*": 6,
+            "stir solution with magnetic_stirrer": 3
+        },
+        {
+            "dissolve ferrous_sulfate in beaker*": [
+                "pick ferrous_sulfate",
+                "wash beaker"
+            ],
+            "stir solution with magnetic_stirrer": [
+                "pick magnetic_stirrer",
+                "dissolve ferrous_sulfate in beaker*"
+            ]
+        }
+    ],
+    "lab4": [
+        {
+            "find copper_sulfate_solution": 1,
+            "dilute copper_sulfate_solution": 3,
+            "pick iron_nail": 2,
+            "polish iron_nail": 6,
+            "soak iron_nail in copper_sulfate_solution*": 7
+        },
+        {
+            "dilute copper_sulfate_solution": [
+                "find copper_sulfate_solution"
+            ],
+            "polish iron_nail": [
+                "pick iron_nail"
+            ],
+            "soak iron_nail in copper_sulfate_solution*": [
+                "dilute copper_sulfate_solution",
+                "polish iron_nail"
+            ]
+        }
+    ],
+    "lab5": [
+        {
+            "wash beaker": 1,
+            "find sodium_hydroxide": 1,
+            "pick aluminum_foil": 2,
+            "dissolve sodium_hydroxide in beaker*": 6,
+            "cut aluminum_foil": 2,
+            "heat aluminum_foil*": 5,
+            "add aluminum_foil to beaker": 2
+        },
+        {
+            "dissolve sodium_hydroxide in beaker*": [
+                "find sodium_hydroxide",
+                "wash beaker"
+            ],
+            "cut aluminum_foil": [
+                "pick aluminum_foil"
+            ],
+            "heat aluminum_foil*": [
+                "cut aluminum_foil"
+            ],
+            "add aluminum_foil to beaker": [
+                "heat aluminum_foil*",
+                "dissolve sodium_hydroxide in beaker*"
+            ]
+        }
+    ],
+    "lab6": [
+        {
+            "wash beaker": 1,
+            "find nitric_acid": 1,
+            "dilute nitric_acid": 4,
+            "add nitric_acid to beaker": 2,
+            "pick zinc_pellet": 1,
+            "crush zinc_pellet": 2,
+            "heat zinc_pellet*": 5,
+            "add zinc_pellet to beaker": 2
+        },
+        {
+            "dilute nitric_acid": [
+                "find nitric_acid"
+            ],
+            "add nitric_acid to beaker": [
+                "dilute nitric_acid",
+                "wash beaker"
+            ],
+            "crush zinc_pellet": [
+                "pick zinc_pellet"
+            ],
+            "heat zinc_pellet*": [
+                "crush zinc_pellet"
+            ],
+            "add zinc_pellet to beaker": [
+                "heat zinc_pellet*",
+                "wash beaker"
+            ]
+        }
+    ],
+    "lab7": [
+        {
+            "wash beaker": 1,
+            "find ethanol": 1,
+            "find acetic_acid": 1,
+            "find catalyst": 1,
+            "add ethanol to beaker": 1,
+            "add acetic_acid to beaker": 2,
+            "add catalyst to beaker": 2,
+            "heat beaker*": 6,
+            "cool beaker*": 5,
+            "dry beaker*": 4
+        },
+        {
+            "add ethanol to beaker": [
+                "find ethanol",
+                "wash beaker"
+            ],
+            "add acetic_acid to beaker": [
+                "find acetic_acid",
+                "wash beaker"
+            ],
+            "add catalyst to beaker": [
+                "find catalyst",
+                "wash beaker"
+            ],
+            "heat beaker*": [
+                "add catalyst to beaker",
+                "add acetic_acid to beaker",
+                "add ethanol to beaker"
+            ],
+            "cool beaker*": [
+                "heat beaker*"
+            ],
+            "dry beaker*": [
+                "cool beaker*"
+            ]
+        }
+    ],
+    "lab8": [
+        {
+            "pick salt": 1,
+            "wash test_tube": 3,
+            "dissolve salt in test_tube*": 8,
+            "pick ph_paper": 1,
+            "put ph_paper in test_tube": 3,
+            "label salt": 1
+        },
+        {
+            "dissolve salt in test_tube*": [
+                "pick salt",
+                "wash test_tube"
+            ],
+            "put ph_paper in test_tube": [
+                "dissolve salt in test_tube*",
+                "pick ph_paper"
+            ],
+            "label salt": [
+                "put ph_paper in test_tube"
+            ]
+        }
+    ],
+    "lab9": [
+        {
+            "find benzyl_alcohol": 2,
+            "find oxidizing_agent": 1,
+            "wash beaker": 1,
+            "add benzyl_alcohol to beaker": 3,
+            "add oxidizing_agent to beaker": 3,
+            "heat beaker*": 5,
+            "cool beaker*": 1,
+            "dry beaker*": 4
+        },
+        {
+            "add benzyl_alcohol to beaker": [
+                "find benzyl_alcohol",
+                "wash beaker"
+            ],
+            "add oxidizing_agent to beaker": [
+                "find oxidizing_agent",
+                "wash beaker"
+            ],
+            "heat beaker*": [
+                "add oxidizing_agent to beaker",
+                "add benzyl_alcohol to beaker"
+            ],
+            "cool beaker*": [
+                "heat beaker*"
+            ],
+            "dry beaker*": [
+                "cool beaker*"
+            ]
+        }
+    ],
+    "lab10": [
+        {
+            "find copper_sulfate_solution": 3,
+            "heat copper_sulfate_solution*": 4,
+            "crystallize copper_sulfate_solution*": 4,
+            "filter copper_sulfate_solution": 3
+        },
+        {
+            "heat copper_sulfate_solution*": [
+                "find copper_sulfate_solution"
+            ],
+            "crystallize copper_sulfate_solution*": [
+                "heat copper_sulfate_solution*"
+            ],
+            "filter copper_sulfate_solution": [
+                "crystallize copper_sulfate_solution*"
+            ]
+        }
+    ]
+}
