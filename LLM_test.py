@@ -115,8 +115,8 @@ def Agent(args):
             break
         if not agent_occupy:
             message = calling.add_user_message(message, f"\nIn t={current_time}, your action is:")
-            # action = calling.get_response(message)
-            action = input()
+            action = calling.get_response(message)
+            # action = input()
             action = action.strip()
             message = calling.add_assistant_message(message, action)
             print(action)

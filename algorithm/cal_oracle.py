@@ -34,8 +34,6 @@ def bfs(action, dependencies):
 def check_dependencies(action, current_time, action_schedule, dependencies):
     if action not in dependencies:
         return True
-    # for dep in dependencies[action]:
-    #     print(action_schedule.get(dep, (0, 0)))
     return all(action_schedule.get(dep, (100, 100))[1] < current_time for dep in dependencies[action])
 
 def cal_oracle(task):
@@ -81,14 +79,13 @@ def cal_oracle(task):
             action_broken = False
             for l in actionlist:
                 for act in l:
-                    # print(act, current_time, action_schedule)
                     if check_dependencies(act, current_time, action_schedule, dependencies):
                         if act in non_occupy_actions:
                             duration = actions[act]
-                            action_schedule[act] = (current_time, current_time  + (duration-1))  # 标记非占用任务时间但不更新当前时间
+                            action_schedule[act] = (current_time, current_time  + (duration-1))
                             current_time += 1
                             non_occupy_actions.pop(act)
-                            action_broken = True  # 设置标志为True，表示需要跳出两层循环
+                            action_broken = True
                             break 
                         if act in occupy_actions:
                             start_time = current_time
@@ -107,8 +104,6 @@ def cal_oracle(task):
         if maxNum+1 < final_min:
             final_min = maxNum+1
             final_schedule = action_schedule
-    # for action, times in sorted(final_schedule.items(), key=lambda x: x[1]):
-    #     print(f"{action}: Start at t={times[0]}min, End at t={times[1]}min")
     return final_min
 
 
