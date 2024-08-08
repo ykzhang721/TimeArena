@@ -10,11 +10,11 @@ meta_prompt = '''As an AI agent, your objective is to efficiently complete a ser
  - You can perform only one action at a time.
  - After each observation from the environment, output an action based on that observation and the instructions.
  - Actions fall into two types:
-    - Type 1: Action occupies you until completion (e.g., "wash OBJ").
-    - Type 2: Action lets you be idle, allowing to perform other actions (e.g., "heat OBJ").
- - Follow the "Valid Actions" format for your output (e.g., "wash cup").
+    - Type 1: Action occupies you until completion (e.g., wash OBJ).
+    - Type 2: Action lets you be idle, allowing to perform other actions (e.g., heat OBJ).
+ - Follow the "Valid Actions" format for your output (e.g., wash cup).
  - If no action is required, use "wait" to skip the current time.
- - Output the action explicitly (e.g., "wash cup").
+ - Output the action explicitly and do not add other symbols (e.g., wash cup).
  - Select object names (OBJ) from the list of Available Objects (e.g., use "rice" instead of "cooked rice" of "rice(Only for Task 1)").
 '''
 
@@ -49,9 +49,10 @@ class TimeArena():
         self.actions_state = MetaAction().properties['state']
         
     def step(self, action: str):
+        increment = 0 
         action = action.strip()
         if action == 'wait':
-            increment = None
+            increment = 0
             observation = "You wait for one minute.\n"
             self.update_non_occupy() 
             observation += self.add_non_occupy_complete_to_obervation() 
@@ -62,6 +63,23 @@ class TimeArena():
             self.last_score = self.current_score
             self.last_action = action
             return observation, increment, self.isCompleted, False, False
+        
+        action_valid, object_valid = self.is_valid(action)
+        if not (action_valid and object_valid):
+            observation = ""
+            increment = 0
+            if not action_valid:
+                invalid_action_message = self.getInvalidActionMessage()
+                observation += invalid_action_message
+                print(invalid_action_message)
+            if not object_valid:
+                invalid_object_message = self.getInvalidObjectMessage()
+                observation += invalid_object_message
+                print(invalid_object_message)
+            return observation, increment, False, False, True
+
+
+        
         action_parsed, object_attribute = self.parse_action(action)
         self.agent_occupy = self.name2actions[action_parsed].properties['occupy']
         if self.action_object_valid(object_attribute,action):
@@ -70,7 +88,7 @@ class TimeArena():
                     if self.name2actions[action_parsed].properties['occupy']: 
                         if action == self.last_action: 
                             observation = None 
-                            increment = None
+                            increment = 0
                             self.reduce_time(object_attribute)
                             required_time = self.get_time(object_attribute) 
                             self.update_non_occupy() 
@@ -88,7 +106,7 @@ class TimeArena():
                             required_time = self.get_time(object_attribute)
                             self.reduce_time(object_attribute)
                             observation = f"You are doing ``{action}``, it will take {required_time} minutes.\n"
-                            increment = None
+                            increment = 0
                             self.update_non_occupy()
                             observation += self.add_non_occupy_complete_to_obervation()
                             required_time = self.get_time(object_attribute)
@@ -125,13 +143,14 @@ class TimeArena():
                         return observation, increment, self.isCompleted, self.agent_occupy, False
                 else:
                     observation = f"``{action}`` has already been completed.\n"
-                    increment = None
+                    increment = 0
                     self.update_non_occupy()
                     observation += self.add_non_occupy_complete_to_obervation()
                     self.current_score = self.score.get_score()
                     if self.current_score == 100:
                         self.isCompleted = True
                     increment = self.current_score - self.last_score
+                    self.last_score = self.current_score
                     return observation, increment, self.isCompleted, False, True
             else:
                 for k, v in object_attribute.items():
@@ -152,21 +171,22 @@ class TimeArena():
                 if self.current_score == 100:
                     self.isCompleted = True
                 increment = self.current_score - self.last_score
+                self.last_score = self.current_score
                 return observation, increment, self.isCompleted, False, True
         else:
             for k, v in object_attribute.items():
                 if self.name2objects[k].properties['occupy']:
                     observation = f"Object ``{k}`` is being occupied by another action.\n"
-                    increment = None
+                    increment = 0
                 if v not in self.name2objects[k].properties['todo'].keys():
                     observation = f"You cannot perform action ``{action_parsed}`` on object ``{self.name2objects[k].properties['name']}``.\n"
-                    increment = None
+                    increment = 0
                 elif len(action.split(" ")) == 4:
                     obj1,obj2 = action.split(" ")[1],action.split(" ")[3]
                     if obj2 in self.constraint_only_for_task_dict.keys():
                         if obj1 not in self.constraint_only_for_task_dict[obj2]:
                             observation = f"You cannot perform action ``{action_parsed}`` on object ``{obj1}`` and ``{obj2}``.\n"
-                            increment = None
+                            increment = 0
             self.update_non_occupy()
             observation += self.add_non_occupy_complete_to_obervation()
             self.current_score = self.score.get_score()
@@ -263,9 +283,9 @@ class TimeArena():
             for o in value:
                 if names_count[o.properties['name']] > 1:
                     if o.properties['name'] not in object_name_suffix.keys():
-                        object_name_suffix[o.properties['name']] = 1  # 初始化编号
+                        object_name_suffix[o.properties['name']] = 1 
                     else:
-                        object_name_suffix[o.properties['name']] += 1  # 递增编号
+                        object_name_suffix[o.properties['name']] += 1 
                     new_obj_name = f"{o.properties['name']}_{object_name_suffix[o.properties['name']]}"
                     o.properties['name'] = new_obj_name
                     self.obj_task_name[new_obj_name] = key
@@ -369,7 +389,6 @@ class TimeArena():
         for key, value in object_attribute.items():
             self.non_occupy_conversation_info.setdefault(key, {})
             self.non_occupy_conversation_info[key][value] = action
-            # pdb.set_trace()
 
     def merge(self, dict_a, dict_b):
         for key, value in dict_b.items():
@@ -402,7 +421,6 @@ class TimeArena():
                     object_set.add(f"{object} is {self.actions_state[property][1]}.")
                 elif self.name2objects[object].properties['todo'][property] == 0 and "_2" in property:
                     act = self.non_occupy_conversation_info[object][property]
-                    # pdb.set_trace()
                     if act.split(" ")[1] in updated_occupy_info.keys():
                         updated_occupy.setdefault(object, [])
                         updated_occupy[object].append(property)
@@ -499,6 +517,27 @@ class TimeArena():
     def getObjectList(self):
         return [obj.properties['name'].lower() for obj in self.objects]
 
+    def is_valid(self, action):
+        action = action.strip().lower()
+        split_action = action.split(" ")
+        if action == 'wait':
+            return True, True
+        if len(split_action) in [1, 3] or len(split_action) > 4:
+            return False, True
+        if len(split_action) == 4:
+            action_parsed = f"{split_action[0]} {split_action[2]}"
+        else:
+            action_parsed = f"{split_action[0]}"
+        if action_parsed not in self.getActionList():
+            return False, True
+        objects = self.getObjectList()
+        if len(split_action) == 4:
+            if split_action[1] not in objects or split_action[3] not in objects:
+                return True, False
+        elif len(split_action) == 2:
+            if split_action[1] not in objects:
+                return True, False
+        return True, True
 
 
 if __name__ == "__main__":

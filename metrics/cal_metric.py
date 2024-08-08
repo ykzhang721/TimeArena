@@ -44,11 +44,15 @@ def cal_metrics(path):
         with open(file_path, 'r') as f:
             data = json.load(f)
         i = 0
+        # for index, item in enumerate(data):
+        #     if type(item) == dict:
+        #         i = index
+        #         break
+        Time_score = {}
         for index, item in enumerate(data):
-            if type(item) == dict:
-                i = index
-                break
-        scores = [entry["progress score"] for entry in data[i:-1]]
+            if type(item)==dict and 'time' in item.keys(): #记得改下
+                Time_score[item['time']] = item['progress score']
+        scores = [v for k,v in Time_score.items()]
         models_result.append(scores)
     print(len(models_result))
     return Average_Progress_Score(models_result), Completion_Speed(models_result), Completion_Rate(models_result), Average_Completion_Time(models_result)

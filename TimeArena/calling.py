@@ -12,8 +12,6 @@ from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-
 
 class FuncCall:
     def __init__(self, lm, model_name=None, ip=None, port=None):

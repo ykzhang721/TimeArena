@@ -76,7 +76,7 @@ Required arguments：
 
 Optional arguments
 1. `--constraint` refers to apply resource constraints. (In cooking scenario, we limit the number of pot, fryer and oven to at most one).
-2. `--sp` refers to self-plan prompting method.
+2. `--prompting` refers to prompting method, including 'react', 'reflexion' and 'selfplan'.
 
 
 #### For Open Source Models
@@ -120,7 +120,7 @@ Required arguments：
 
 Optional arguments
 1. `--constraint` refers to apply resource constraints. (In cooking scenario, we limit the number of pot, fryer and oven to at most one)
-2. `--sp` refers to self-plan prompting method.
+2. `--prompting` refers to prompting method, including 'react', 'reflexion' and 'selfplan'.
 
 
 
