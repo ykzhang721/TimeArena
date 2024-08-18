@@ -10,9 +10,9 @@
 
 </p>
 
+Our paper is accepted by ACL 2024.
 
-
-# TimeArena
+## TimeArena
 
 TimeArena is a dynamic and interactive environment that integrates time to enable human-like efficient multitasking, which challenges agents to handle multiple tasks and parallel processing to save time.
 
@@ -185,11 +185,25 @@ If our paper or related resources prove valuable to your research, we kindly ask
 
 
 ```
-@article{zhang2024timearena,
-  title={TimeArena: Shaping Efficient Multitasking Language Agents in a Time-Aware Simulation},
-  author={Zhang, Yikai and Yuan, Siyu and Hu, Caiyu and Richardson, Kyle and Xiao, Yanghua and Chen, Jiangjie},
-  journal={arXiv preprint arXiv:2402.05733},
-  year={2024}
+@inproceedings{zhang-etal-2024-timearena,
+    title = "{T}ime{A}rena: Shaping Efficient Multitasking Language Agents in a Time-Aware Simulation",
+    author = "Zhang, Yikai  and
+      Yuan, Siyu  and
+      Hu, Caiyu  and
+      Richardson, Kyle  and
+      Xiao, Yanghua  and
+      Chen, Jiangjie",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.acl-long.215",
+    pages = "3894--3916",
+    abstract = "Despite remarkable advancements in emulating human-like behavior through Large Language Models (LLMs), current textual simulations do not adequately address the notion of time. To this end, we introduce TimeArena, a novel textual simulated environment that incorporates complex temporal dynamics and constraints that better reflect real-life planning scenarios. In TimeArena, agents are asked to complete multiple tasks as soon as possible, allowing for parallel processing to save time. We implement the dependency between actions, the time duration for each action, and the occupancy of the agent and the objects in the environment. TimeArena grounds to 30 real-world tasks in cooking, household activity, and laboratory work. We conduct extensive experiments with various LLMs using TimeArena. Our findings reveal that even the most powerful models, e.g., GPT-4, still lag behind humans in effective multitasking, underscoring the need for enhanced temporal awareness in the development of language agents.",
 }
 ```
 
