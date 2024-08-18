@@ -10,7 +10,7 @@
 
 </p>
 
-Our paper is accepted by ACL 2024.
+Our paper is accepted by ACL 2024. 🎉
 
 ## TimeArena
 
